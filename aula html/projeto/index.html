@@ -22,9 +22,31 @@
         </div>
     </section>
     <section>
+        <h1>Desafio 2</h1>
+        <h3>Formulário do desafio</h3>
+        <p>De acordo com o texto, quem foi o criador do HTML?</p>
+        <form>
+            <input type="radio" id="Tim Berners-Lee" answer="Tim Berners-Lee" value="true">
+            <label for="male">Tim Berners-Lee</label><br>
+            <input type="radio" id="Helder Thomas Michael Lalo" answer="Helder Thomas Michael Lalo" value="false">
+            <label for="female">Helder Thomas Michael Lalo (HTML)</label><br>
+            <input type="radio" id="other" answer="Nenhuma das opções acima" value="false">
+            <label for="other">Nenhuma das opções acima</label>
+          </form> 
+        <p>Insira seus dados</p>
+        <form action="pagina-post.html" method="POST">
+            <label for="fname">Nome:</label><br>
+            <input type="text" id="fname" name="fname" value="Fulano"><br>
+            <label for="lname">Sobrenome:</label><br>
+            <input type="text" id="lname" name="lname" value="de Tal"><br><br>
+            <input type="submit" value="Enviar">
+            <input type="reset">
+          </form> 
+    </section>
+    <section>
         <h3>Mistérios do HTML</h3>
-        <a href="https://youtu.be/dQw4w9WgXcQ">Easter Egg do HTML: clique aqui e descubra!!</a>
-        </section>
+        <a href="https://youtu.be/dQw4w9WgXcQ"><button>Easter Egg</button></a>
+    </section>
     </body>
 
 </html>
