@@ -2,7 +2,6 @@ body{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    text-align: justify;
     margin: 10px 100px; 
 }
 
@@ -19,7 +18,7 @@ p{
 }
 
 .div_right{
-    text-align: end;
+    text-align: flex-end;
     align-self: flex-end;
     justify-content: flex-end;
 }
