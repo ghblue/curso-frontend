@@ -12,7 +12,7 @@ p{
 
 .div_left{
     background-color: grey; 
-    text-align: start;
+    text-align: flex-start;
     align-items: flex-start;
     justify-content: flex-start;
 }
