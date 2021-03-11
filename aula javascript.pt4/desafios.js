@@ -31,32 +31,82 @@ const colaboradores = [
     },
 ]
 
-//exercicio 1
-const desafio1 = colaboradores.map( (colab, indice)=>{
-    return colab.name
-} )
-    console.log(desafio1)
+const installments = [
+    {
+      installment_number: 1,
+      value: 123.45,
+      status: 'Pago'
+    },
+    {
+      installment_number: 2,
+      value: 139.88,
+      status: 'Pago'
+    },
+    {
+      installment_number: 3,
+      value: 123.45,
+      status: 'Pago'
+    },
+    {
+      installment_number: 4,
+      value: 182.37,
+      status: 'Aberto'
+    },
+    {
+      installment_number: 5,
+      value: 133.93,
+      status: 'Aberto'
+    }
+  ]
+//exercício 1a
+const result = colaboradores.reduce((acc, colab) =>{
+  return acc + colab.idade
+}, 0)
+console.log (result)
 
-//exercicio 2
-const desafio2 = colaboradores.filter(colab =>{
-  return colab.cargo === 'front-end'
-})
-console.log(desafio2)
 
-//exercicio 3
-const desafio3 = colaboradores.find(colab =>{
-  return colab.idade > 23
-})
-console.log(desafio3)
+//exercício 1b resolvido e simplificado pelo érico
+const ex1_b = colaboradores.reduce(  (acc, colab) => Object.assign(acc,
+  {[colab.cargo]: acc[colab.cargo] ?
+    acc[colab.cargo] + 1 : 1}),
+{} )
+console.log(ex1_b)
 
-//exercicio 4
-const desafio4 = colaboradores.filter(colab =>{
-  return colab.idade > 18
-})
-console.log(desafio4)
 
-//exercicio 5
-const desafio5 = colaboradores.some(colab =>{
-  return colab.cargo === 'estagiario'                               
+//exercicio 2a
+const ex2_a = colaboradores.slice().sort((a,b) =>{
+return a.idade - b.idade
 })
-console.log(desafio5)
+console.log(ex2_a)
+
+//exercicio 2b
+const ex2_b = colaboradores.slice().sort((a,b) =>{
+return b.idade - a.idade
+})
+console.log(ex2_b)
+
+//exercicio 2c
+const ex2_c = colaboradores.slice().sort((a,b) =>{ 
+let pesos = {
+  estagiario: 1,
+  'front-end': 2,
+  'back-end': 3,
+  designer: 4
+  } 
+return pesos[a.cargo] - pesos[b.cargo]
+})
+console.log(ex2_c)
+
+//exercicio 2d
+const ex2_d = colaboradores.slice().sort((a,b) =>{ 
+let pesos = {
+  estagiario: 1,
+  'front-end': 2,
+  'back-end': 3,
+   designer: 4
+} 
+return ((a.idade - b.idade) === 0) ?
+     (pesos[a.cargo] - pesos[b.cargo]):
+     (a.idade - b.idade)
+})
+console.log(ex2_d)
