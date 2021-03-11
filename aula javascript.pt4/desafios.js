@@ -58,9 +58,14 @@ const installments = [
       status: 'Aberto'
     }
   ]
+//exercício 1a
+const result = colaboradores.reduce((acc, colab) =>{
+  return acc + colab.idade
+}, 0)
+console.log (result)
 
 
-//ex1_b resolvido e simplificado pelo érico
+//exercício 1b resolvido e simplificado pelo érico
 const ex1_b = colaboradores.reduce(  (acc, colab) => Object.assign(acc,
   {[colab.cargo]: acc[colab.cargo] ?
     acc[colab.cargo] + 1 : 1}),
