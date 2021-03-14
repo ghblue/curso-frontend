@@ -110,3 +110,6 @@ return ((a.idade - b.idade) === 0) ?
      (a.idade - b.idade)
 })
 console.log(ex2_d)
+
+
+//exercicio 2d solução érico
