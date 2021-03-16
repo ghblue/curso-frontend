@@ -43,6 +43,8 @@ const user = {
   //exercicio 2c
   const [,{name}] = students
   console.log(name)
+
+  //finalizados
   
   
   
