@@ -1,0 +1,17 @@
+.container {
+
+  border: none;
+  padding: 15px 32px;
+
+  background-color: #4CAF50; 
+
+  display: flex;
+  text-align: center;
+  font-size: 16px;
+
+  transition: background-color 0.2s;
+}
+
+.container:hover{
+  background: #5F9EA0;
+}

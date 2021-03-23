@@ -1,0 +1,30 @@
+body{
+    background-color: grey;
+    height: 500px;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;   
+    margin: 0px 100px;
+}
+/*até que minha largura seja 500, respeito o primeiro body, passado disso, se usa as informações dentro do media*/
+@media only screen and (max-width: 500px){
+    body{
+        margin: 0px 30px;
+    }
+}
+
+h1{
+    color:brown;
+}
+
+div{
+    background-color: rgb(206,  204,  204);
+    padding: 20px;
+    width: 80%;
+}
+
+#textos{
+    display: flex;
+    flex-wrap: wrap;
+}
