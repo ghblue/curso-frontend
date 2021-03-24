@@ -1,31 +1,30 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import logo from './components/logo.svg';
 import './styles/App.css';
 
-import { Button } from './components/Button'
+import  Button  from './components/Button'
 
 
 function App() {
     
-    const [title, setTitle] = useState("anchor")
-    const [title2, setTitle2] = useState()
-    const [showTitle, setShowTitle] = useState(false);
+  const [text_anchor, setText_anchor] = useState("anchor")
+  const [title_h1, setTitle_h1] = useState()
+  const [state_a, setState] = useState(true)
 
-    const handleClick = () =>{
-    setTitle("WHATSAPP 2")
-    setShowTitle(!showTitle)
+  const handleClick = () =>{  
+    setText_anchor("WHATSAPP 2")
   }
   const handleClick2 = () =>{
-    setTitle2("Questão E")
-    setShowTitle(!showTitle)
+    setTitle_h1("Questão E")
   }
-  
+  useEffect(()=>{ state_a ? setState(false) : console.log("Texto do anchor mudou")}, [text_anchor])
+
   return (
     <div className="App">
       <header className="App-header">
-        <h1>{title2}</h1>
+        <h1>{title_h1}</h1>
         <img src={logo} className="App-logo" alt="logo" />
-        <Button func={handleClick2} text = "Title Generator" textH1 = {title2} />
+        <Button func={handleClick2} text="Title Generator" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -35,10 +34,10 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >  
-        {title}
+        {text_anchor}
         </a>
         <p></p>
-         <Button func={handleClick} text = "Link Generator" text2 = {title} />
+        <Button func={handleClick} text="Link Generator"/>
       </header>
     </div>
   );
