@@ -1,19 +1,5 @@
-import { useEffect } from "react";
 import styles from '../styles/Button.module.css'
 
-export function Button(props){
-    useEffect( () => {
-        return () => {
-            console.log("Texto do anchor mudou")
-        }
-    }, [props.text2])
+const Button = (props) => <button onClick ={ props.func } className={ styles.container }> { props.text } </button>
 
-   return (
-       <button onClick = { () => {
-        props.func()}}
-        className = {styles.container}
-        >
-        {props.text}
-        </button>
-   )
-}
+export default Button;
