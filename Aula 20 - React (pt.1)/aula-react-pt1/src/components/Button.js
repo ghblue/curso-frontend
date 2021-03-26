@@ -1,5 +1,5 @@
 import styles from '../styles/Button.module.css'
 
-const Button = (props) => <button onClick ={ props.func } className={ styles.container }> { props.text } </button>
+const Button = ({func, text}) => <button onClick ={func} className={ styles.container }> {text} </button>
 
 export default Button;
