@@ -1,5 +1,5 @@
 import Button from "../components/Button"
-import logo from '../components/logo.svg'
+import logo from '../images/logo.svg'
 import '../styles/App.css';
 
 import { useState } from 'react'
@@ -19,7 +19,13 @@ const Home = () =>{
     const handleClick2 = () =>{
       setTitle_h1("Questão E")
     }
-    const handleNavigation = () =>{
+    const handleNavigationToPosts = () =>{
+      history.push("/posts")
+   }
+   const handleNavigationToPost = () =>{
+    history.push("/create-post")
+ }
+    const handleNavigationToAbout = () =>{
         history.push("/about")
     }
     const handleNavigationToComments = () => {
@@ -31,7 +37,7 @@ const Home = () =>{
       <header className="App-header">
         <h1>{title_h1}</h1>
         <img src={logo} className="App-logo" alt="logo" />
-        <Button func={handleClick2} text="Title Generator" />
+        <Button func={handleClick2} text="title generator" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -44,11 +50,15 @@ const Home = () =>{
         {text_anchor}
         </a>
         <p></p>
-        <Button func={handleClick} text="Link Generator"/>
+        <Button func={handleClick} text="link generator"/>
         <p></p>
-        <Button func={handleNavigation} text="About"/>
+        <Button func={handleNavigationToAbout} text="about"/>
         <p></p>
-        <Button func={handleNavigationToComments} text="Comments"/>
+        <Button func={handleNavigationToPosts} text="post list"/>
+        <p></p>
+        <Button func={handleNavigationToComments} text="comments"/>
+        <p></p>
+        <Button func={handleNavigationToPost} text="to do posting"/>        
         <p></p>
       </header>
     </div>

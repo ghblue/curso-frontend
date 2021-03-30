@@ -1,9 +1,13 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import About from './routes/About'; // /
+import Comments from "./routes/Comments";
+import Home from './routes/Home';// /About
+import Posts from "./routes/Posts";
+import CreatePost from './routes/CreatePost'
 
-import About from './pages/About'; // /
-import Comments from "./pages/Comments";
-import Home from './pages/Home';// /About
-import Posts from "./pages/Posts";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function App() {
@@ -30,6 +34,12 @@ function App() {
           <Posts />
         </Route>
       </Switch>
+      <Switch>
+        <Route exact path="/create-post">
+          <CreatePost />
+        </Route>
+      </Switch>
+      <ToastContainer />
     </Router>
   );
 }
