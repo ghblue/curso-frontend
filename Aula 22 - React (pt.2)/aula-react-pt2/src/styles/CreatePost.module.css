@@ -1,0 +1,54 @@
+.containerDiv > div {
+    margin: 30px;
+    max-width: 300px;
+    padding: 16px;
+    background-color: white;
+    margin-bottom: 0%;
+  }
+
+.containerInputs:hover{
+    background-color: #ddd;
+    outline: none;
+  }
+
+.containerInputs{
+    width: 80%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+  }
+.containerButton{
+    background-color: #4c5baf;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 90%;
+    opacity: 0.9;
+}
+.containerButton:hover{
+    transition-delay: 0.2ms;
+    background-color: rgb(199, 199, 196);
+}
+.containerP{
+    margin-left: 0.5%;
+    text-align: flex-start;
+
+    color: black;
+}
+
+.containerIMG{
+    height: 100%;
+    max-height: 100%;
+    background-image: url("../images/nave.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+}
+
+.containerH1{
+    color: rgb(255, 255, 255);
+}
