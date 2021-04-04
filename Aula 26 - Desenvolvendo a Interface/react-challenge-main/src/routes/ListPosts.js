@@ -1,11 +1,15 @@
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
+
 import { CreateDiv, CreateTitleh1} from '../styles/CreatePost'
 import { NewTextField, CreateBody, CreateTitle, ButtonOrganization, ButtonCreate, ButtonCancel } from '../styles/Form';
+import "../styles/style.css";
+
 import { putPost } from "../services/posts";
 import { getPostsList, deletePost } from "../services/posts";
-import "../styles/style.css";
+
+
 
 const ListPosts = () => {
 
@@ -14,7 +18,7 @@ const ListPosts = () => {
   const [openEdit, setEdit] = useState(false);
   const [selectedItem, setSelectedItem] = useState("");
 
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, setValue} = useForm();
 
   const handleDelete = async (open) => {
     try {
@@ -65,6 +69,11 @@ const ListPosts = () => {
     handleGetPosts();
   }, []);
 
+  useEffect(()=>{
+    setValue("title", selectedItem.title)
+    setValue("body", selectedItem.body)
+  }, [openEdit, selectedItem, setValue])
+
   return (
     <>
       <div className="card">
@@ -76,7 +85,8 @@ const ListPosts = () => {
             </div>
             <div>
               <button className="info"
-              onClick={() => handleEdit(item)}>Editar Post</button>
+              onClick={() => handleEdit(item)}>
+                Editar Post</button>
               <button
                 className="error"
                 onClick={() => handleOpenModalDelete(item)  }
@@ -110,13 +120,14 @@ const ListPosts = () => {
           <CreateTitleh1>Editar uma publicação</CreateTitleh1>
           <div>
             <form onSubmit={handleSubmit(onSubmit)}>
+                {setValue("title", selectedItem.title)}
                 <CreateTitle>Título</CreateTitle>
                 <NewTextField 
                     id="outlined-search"
                     size="small"
                     type="search"
                     variant="outlined"
-                    placeholder={selectedItem.title}
+                    {...register("title")}
                     inputProps = {{ref: register, name: "title"} } 
                 />
                 <CreateBody>Descrição</CreateBody>
@@ -125,9 +136,9 @@ const ListPosts = () => {
                     size="small"
                     type="search"
                     variant="outlined"
-                    placeholder={selectedItem.body}
+                    {...register("body")}                    
                     inputProps = {{ref: register, name: "body"} } 
-                  />
+                    />
                 <ButtonOrganization className="m-top-25">
                   <ButtonCreate
                    variant="contained" type="submit" color="primary"
@@ -136,7 +147,8 @@ const ListPosts = () => {
                   </ButtonCreate>
                   <ButtonCancel
                    variant="contained" name="create" 
-                   onClick={handleChangeValueEdit} >
+                   onClick={handleChangeValueEdit}
+                   >
                     Cancelar
                   </ButtonCancel>
                 </ButtonOrganization>
@@ -144,9 +156,8 @@ const ListPosts = () => {
           </div>
         </CreateDiv>
       )}
-
     </>
-  );
-};
+  )
+}
 
 export default ListPosts;
