@@ -1,13 +1,11 @@
 import { useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
-
-import { CreateDiv, CreateTitleh1 } from '../styles/CreatePost'
-
 import Form from "../components/Form";
 
-import { createPost } from "../services/posts";
-
+import { CreateDiv, CreateTitleh1 } from '../styles/CreatePost'
 import "../styles/style.css";
+
+import { createPost } from "../services/posts";
 
 const CreatePost = () => {
   const history = useHistory();
