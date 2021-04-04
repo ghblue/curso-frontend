@@ -120,7 +120,6 @@ const ListPosts = () => {
           <CreateTitleh1>Editar uma publicação</CreateTitleh1>
           <div>
             <form onSubmit={handleSubmit(onSubmit)}>
-                {setValue("title", selectedItem.title)}
                 <CreateTitle>Título</CreateTitle>
                 <NewTextField 
                     id="outlined-search"
@@ -159,5 +158,4 @@ const ListPosts = () => {
     </>
   )
 }
-
 export default ListPosts;
